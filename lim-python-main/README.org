@@ -1,0 +1,13 @@
+* Running LiM
+- The code lives in lim_code.
+- Configure the dataset to be used in lim_code/generate_dataset.conf
+  - The section *dataset* is the one the scripts will use.
+  - Make sure there is only one dataset section.
+- The runnable scripts are in the _lim_code/run_ directory.
+  - I run them with src_python[:exports code]{venv/bin/python -m run.module}
+  - For instance, src_python[:exports code]{venv/bin/python -m run.run_federation}
+- run_federation assumes extract_features has been run, and that the output files are in dataset/prepared/
+  - For instance, I would move the generated mamadroid files with this command:
+    #+BEGIN_SRC bash :exports code
+     mv app_names.pickle  feature_lists.pickle  feature_names.pickle  features.npz  labels.npz dataset_mamadroid/prepared/
+     #+END_SRC
